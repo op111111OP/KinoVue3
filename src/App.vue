@@ -34,6 +34,12 @@ import Footer from '@/components/Footer.vue';
 
 }
 
+@media screen and (max-width: 1180px) {
+   .conteiner__ {
+      width: 80%;
+   }
+}
+
 @media screen and (max-width: 1080px) {
    .conteiner__ {
       width: 100%;
