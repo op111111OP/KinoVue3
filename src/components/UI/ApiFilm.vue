@@ -178,7 +178,7 @@ img {
    }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
    .api-card-box {
       width: 33%;
    }

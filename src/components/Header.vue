@@ -4,12 +4,14 @@
          <RouterLink to="/" class="logo_box"><img src="@/assets/film_8.svg" alt="SVG Image" class="logo">
             <div class="logo_text">KINO<b>X</b></div>
          </RouterLink>
-         <menu-kategori :posts="posts[0]" :typek="'movie'">
-            MOVIES
-         </menu-kategori>
-         <menu-kategori :posts="posts[1]" :typek="'tv'">
-            SERIES
-         </menu-kategori>
+         <div class="menu-kategori-box">
+            <menu-kategori :posts="posts[0]" :typek="'movie'">
+               MOVIES
+            </menu-kategori>
+            <menu-kategori :posts="posts[1]" :typek="'tv'">
+               SERIES
+            </menu-kategori>
+         </div>
          <div class="search-box">
             <input class="input-text" type="text" placeholder="search" v-model="myValue">
             <div alt="SVG Image" class="bi bi-search logo-search" @click="$router.push(`/search/${myValue}/1`)"></div>
@@ -82,7 +84,7 @@ export default {
    outline: none;
    background: #111;
    border: 1px solid rgb(0, 0, 0);
-   width: 300px;
+   width: 250px;
    height: 34px;
    border-radius: 3%;
    padding-left: 5px;
@@ -101,12 +103,48 @@ export default {
    cursor: pointer;
 }
 
+.menu-kategori-box {
+   display: flex;
+   gap: 15px;
+}
 
 
+
+@media screen and (max-width: 1180px) {
+
+   .haeder_dox {
+      width: 80%;
+   }
+
+   .input-text {
+      width: 90%;
+   }
+
+}
 
 @media screen and (max-width: 1080px) {
    .haeder_dox {
       width: 100%;
+   }
+
+   .input-text {
+      width: 90%;
+   }
+
+}
+
+@media screen and (max-width: 650px) {
+   .logo_text {
+      display: none;
+   }
+
+   .menu-kategori-box {
+      flex-wrap: wrap;
+      gap: 0px 5px;
+   }
+
+   .haeder_dox>* {
+      margin: 0px 0px 0px 5%;
    }
 }
 </style>
