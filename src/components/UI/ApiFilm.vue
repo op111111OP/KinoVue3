@@ -165,4 +165,28 @@ img {
    padding: 0 10px;
    border-radius: 10%;
 }
+
+@media screen and (max-width: 1080px) {
+   .api-card-box {
+      width: 20%;
+   }
+}
+
+@media screen and (max-width: 800px) {
+   .api-card-box {
+      width: 25%;
+   }
+}
+
+@media screen and (max-width: 550px) {
+   .api-card-box {
+      width: 33%;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .api-card-box {
+      width: 50%;
+   }
+}
 </style>

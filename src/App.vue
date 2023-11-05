@@ -28,15 +28,15 @@ import Footer from '@/components/Footer.vue';
 
 .conteiner__ {
    flex: 1 1 auto;
-   width: 1100px;
+   width: 60%;
 
    margin: 0 auto;
 
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1080px) {
    .conteiner__ {
-      width: 1000px;
+      width: 100%;
    }
 }
 </style>
