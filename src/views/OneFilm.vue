@@ -83,8 +83,8 @@
 
       </div>
       <div class="images-box" v-if="ApiImage.backdrops && ApiImage.backdrops.length > 0">
-         <carousel :items-to-show="3" :wrap-around="true">
-            <slide v-for="   item    in    ApiImage.backdrops   " :key="item.id" class="img-box-carusel">
+         <carousel :breakpoints="breakPoster" :items-to-show="3" :wrap-around="true">
+            <slide v-for="     item      in      ApiImage.backdrops     " :key="item.id" class="img-box-carusel">
                <img :src="'https://image.tmdb.org/t/p/original' + item.file_path" alt="">
 
             </slide>
@@ -103,9 +103,9 @@
             allowfullscreen></iframe>
       </div>
 
-      <carousel :items-to-show="2" :wrap-around="true" v-if="ApiSimilar.length > 0">
-         <slide v-for="   item    in    ApiSimilar   " :key="item.id" class=" similar "
-            @click="$router.push(`/${$route.params.type}/${item.id}`), fetchData(`/${$route.params.type}/${item.id}`)">
+      <carousel :breakpoints="breakFilm" :items-to-show="2" :wrap-around="true" v-if="ApiSimilar.length > 0">
+         <slide v-for="     item      in    ApiSimilar   " :key="item.id" class=" similar "
+            @click="$router.push(`/ ${$route.params.type} /${item.id}`), fetchData(`/${$route.params.type} /${item.id}`)">
             <img :src="'https://image.tmdb.org/t/p/original' + item.backdrop_path" alt="similar"
                class="backdrop-img backdrop-img-similar">
             <div class="img-box-similar">
@@ -156,21 +156,33 @@ export default {
             snapAlign: 'center',
          },
 
-         breakpoints: {
-            // 700px and up
-            500: {
+         breakPoster: {
+            0: {
                itemsToShow: 1,
-               snapAlign: 'center',
             },
-            700: {
+            400: {
+               itemsToShow: 1.5,
+            },
+            600: {
                itemsToShow: 2,
-               snapAlign: 'center',
             },
-            // 1024 and up
-            1024: {
+            800: {
                itemsToShow: 3,
-               snapAlign: 'start',
             },
+
+         },
+         breakFilm: {
+            0: {
+               itemsToShow: 1,
+            },
+            500: {
+               itemsToShow: 1.5,
+            },
+
+            800: {
+               itemsToShow: 2,
+            },
+
          },
       }
    },

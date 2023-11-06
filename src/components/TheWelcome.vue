@@ -1,5 +1,6 @@
 <template>
    <div>
+      <now-playing>NowPlaying</now-playing>
       <api-film :posts="masOptin[0]" :week="masSor[2]" :pitos="masSor[0]">Movies</api-film>
       <api-film :posts="masOptin[1]" :week="masSor[3]" :pitos="masSor[1]">Series</api-film>
    </div>

@@ -52,7 +52,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .Kategori {
    transition: all 500ms;
    position: relative;
