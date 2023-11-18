@@ -83,7 +83,7 @@
       </div>
       <div class="images-box" v-if="ApiImage.backdrops && ApiImage.backdrops.length > 0">
          <carousel :breakpoints="breakPoster" :items-to-show="3" :wrap-around="true">
-            <slide v-for="     item      in      ApiImage.backdrops     " :key="item.id" class="img-box-carusel">
+            <slide v-for="item in ApiImage.backdrops" :key="item.id" class="img-box-carusel">
                <img :src="'https://image.tmdb.org/t/p/original' + item.file_path" alt="">
 
             </slide>
@@ -104,7 +104,7 @@
 
       <carousel :breakpoints="breakFilm" :items-to-show="2" :wrap-around="true" v-if="ApiSimilar.length > 0">
          <slide v-for="     item      in    ApiSimilar   " :key="item.id" class=" similar "
-            @click="$router.push(`/ ${$route.params.type} /${item.id}`), fetchData(`/${$route.params.type} /${item.id}`)">
+            @click="$router.push(`/${$route.params.type}/${item.id}`), fetchData(`/${$route.params.type}/${item.id}`)">
             <img :src="'https://image.tmdb.org/t/p/original' + item.backdrop_path" alt="similar"
                class="backdrop-img backdrop-img-similar">
             <div class="img-box-similar">
