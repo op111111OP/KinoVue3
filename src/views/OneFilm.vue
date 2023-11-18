@@ -54,8 +54,7 @@
                   <providers :posts="ApiWatchProviders.results.US.free">free:</providers>
                </div>
             </div>
-            <button @click="showBlockCast = !showBlockCast, console.log(this.ApiData)"
-               class="showBlockCast-button">Cast:</button>
+            <button @click="showBlockCast = !showBlockCast" class="showBlockCast-button">Cast:</button>
             <div class="cast" v-if="showBlockCast">
                Cast:
                <div v-for="item in ApiCredits.cast" :key="item.id" class="text-overview-box">

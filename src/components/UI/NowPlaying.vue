@@ -10,7 +10,7 @@
       </div>
 
       <div class="api-card">
-         <carousel v-bind="settings" :breakpoints="breakpoints" :items-to-show="6" :wrap-around="'loop'" :autoplay="3000">
+         <carousel v-bind="settings" :breakpoints="breakpoints" :items-to-show="6" :wrap-around="'loop'" :autoplay="5000">
             <slide v-for="item in ApiData.results" :key="item" class="api-card-box">
 
 

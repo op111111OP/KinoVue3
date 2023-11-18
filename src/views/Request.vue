@@ -100,7 +100,7 @@ export default {
             .then((response) => response.json())
             .then((response) => {
                this.ApiData = response;
-               console.log(this.ApiData);
+               console.log(this.ApiData, 222);
             })
             .catch((err) => console.error(err));
       },
