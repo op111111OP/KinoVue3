@@ -31,8 +31,9 @@
                         </div>
                      </div>
                      <div v-if="showBlock[item.id] && item.overview" class="showBlock-overview">
-                        {{ item.overview }}
-                        <div class="img-box"><img :src="'https://image.tmdb.org/t/p/original' + item.poster_path" alt="">
+                        <div class="showBlock-overview_text"> {{ item.overview }}</div>
+                        <div class="img-box img-box_text"><img
+                              :src="'https://image.tmdb.org/t/p/original' + item.poster_path" alt="">
                         </div>
                      </div>
 
@@ -96,10 +97,14 @@
 
       </div>
       <div class="videos" v-if="ApiVideos.results && ApiVideos.results.length > 0">
-         <iframe width="100%" height="515" :src="'https://www.youtube.com/embed/' + ApiVideos.results[0].key"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+         <div class="video-container">
+            <iframe class="iframe" width="100%" height="515"
+               :src="'https://www.youtube.com/embed/' + ApiVideos.results[0].key" title="YouTube video player"
+               frameborder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+               allowfullscreen>
+            </iframe>
+         </div>
       </div>
 
       <carousel :breakpoints="breakFilm" :items-to-show="2" :wrap-around="true" v-if="ApiSimilar.length > 0">
@@ -348,6 +353,17 @@ img {
    position: absolute;
    background: rgb(14, 14, 14);
    padding: 5px;
+   justify-content: space-between;
+}
+
+.showBlock-overview_text {
+   min-width: 150px;
+}
+
+.img-box_text {
+   max-width: 300px;
+   max-height: 400px;
+   min-width: 250px;
 }
 
 .showBlock-overview-img {
@@ -380,10 +396,29 @@ img {
    flex-wrap: wrap;
 }
 
+// videos
 .videos {
-   margin-top: 10px;
+   width: 100%;
+   margin: 0px auto;
+   /* Центрируйте контейнер */
 }
 
+.video-container {
+   position: relative;
+   padding-bottom: 56.25%;
+   /* Задайте соотношение сторон видео (высота / ширина * 100%) */
+   overflow: hidden;
+}
+
+.iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+// videos and
 .showBlockCast-button {
    position: relative;
    background-color: inherit;
